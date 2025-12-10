@@ -1,0 +1,63 @@
+body
+{
+    background-color:#242242;
+}
+
+#name-title
+{
+    color:#676767;
+}
+
+.subtitle
+{
+    color:#a3a3a3;
+}
+
+header
+{
+    font-family:Verdana;
+    text-align: center; 
+}
+
+main
+{
+    font-family:Monospace;
+}
+
+
+h3
+{
+    color:#43b2d1;
+}
+
+h4
+{
+    color:#369eba;
+}
+
+ul li
+{
+    color:#3389a1;
+}
+
+
+
+
+.resume-container
+{
+    background-color:#47464d;
+    opacity:75%;
+    border-radius:8px;
+    
+    max-width: 960px; /* Set a maximum width for your content */
+    margin: 0 auto; /* This centers the block-level element horizontally */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    
+}
+
+.eli-desc
+{
+    display:none;
+}
