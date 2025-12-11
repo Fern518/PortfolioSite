@@ -101,3 +101,10 @@ body{
 /* Utility spacing to ensure navbar doesn't overlap on small top margins */
 body > nav + main{margin-top:8px}
 
+/* Lightbox */
+#lightbox-overlay{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:2000;padding:24px}
+#lightbox-overlay .lb-img{max-width:92vw;max-height:92vh;box-shadow:0 12px 40px rgba(0,0,0,.6);border-radius:8px}
+#lightbox-overlay .lb-close{position:absolute;top:16px;right:16px;width:44px;height:44px;border:none;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;font-size:28px;line-height:1;cursor:pointer}
+#lightbox-overlay .lb-close:hover{background:rgba(255,255,255,.2)}
+#lightbox-overlay .lb-caption{position:absolute;left:24px;right:24px;bottom:16px;color:#fff;text-align:center;opacity:.85}
+
