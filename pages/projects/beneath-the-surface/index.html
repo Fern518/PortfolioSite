@@ -26,15 +26,86 @@
           <h1 class="display-5">Beneath the Surface</h1>
           <p class="text-muted">Multiplayer dungeon-crawler horror prototype</p>
         </header>
-        <img src="../../../images/Gamedev/beneathSurface/gameplayShowcase.gif" class="img-fluid rounded mb-4" alt="Beneath the Surface">
-        <h2>Overview</h2>
-        <p>Prototype exploring cooperative tension and asymmetric challenges in a dark, maze-like environment.</p>
-        <h2>Stack</h2>
+        <figure class="mb-4 text-center">
+          <img src="../../../images/Gamedev/beneathSurface/gameplayShowcase.gif" class="img-fluid rounded" alt="Beneath the Surface gameplay">
+          <figcaption class="small text-muted mt-2">Four-player co-op descent into procedural medieval dungeons.</figcaption>
+        </figure>
+
+        <h2 id="premise">The Premise</h2>
+        <p><strong>Beneath the Surface</strong> is a four-player cooperative horror rougelike set in a dark medieval world where kingdoms send explorers into ever‑deepening, ever‑shifting dungeon systems. Inspired by <em>Lethal Company</em>, <em>Pilgrim</em>, and <em>Phasmophobia</em>, it blends procedural generation, team‑based survival, and high‑tension encounters.</p>
+        <p>Each expedition begins at the mouth of a procedural dungeon. A creaking elevator drops you one floor at a time—no maps, no guarantees, and no second chances if your team wipes.</p>
+
+        <h2 id="core-gameplay">Core Gameplay</h2>
+        <h5>Cooperative Medieval Survival</h5>
         <ul>
-          <li>Unity networking</li>
-          <li>Procedural level layout experiments</li>
-          <li>Lighting and VFX</li>
+          <li>Communicate threats and share resources</li>
+          <li>Split tasks or stick together under pressure</li>
+          <li>Decide when to push deeper or retreat to safety</li>
         </ul>
+        <h5>Procedural Dungeon Exploration</h5>
+        <ul>
+          <li>Floors assembled from handcrafted modules with dynamic connectors</li>
+          <li>Collision checks prevent overlaps; layouts are unique every run</li>
+          <li>Threat and complexity escalate with depth</li>
+        </ul>
+        <h5>Multiplayer-Focused Systems</h5>
+        <ul>
+          <li>Unity Netcode for GameObjects + Unity Relay</li>
+          <li>Synced room generation across clients</li>
+          <li>Networked object interaction (pickups, drops, physics)</li>
+        </ul>
+        <h5>Depth as the Main Mechanic</h5>
+        <ul>
+          <li>Going deeper increases risk, rarity, threat, and payout</li>
+          <li>Elevator acts as safe zone, checkpoint, and only exit</li>
+        </ul>
+
+        <h2 id="style">Visual & Atmospheric Style</h2>
+        <ul>
+          <li>Unity HDRP: dark shadows, volumetric lighting, dense fog</li>
+          <li>Torch-lit corridors, dripping stone chambers, medieval gear</li>
+          <li>Audio occlusion and moody ambiences drive tension</li>
+        </ul>
+
+        <h2 id="tech">Technical Challenges & Solutions</h2>
+        <h5>Procedural Dungeon Generation</h5>
+        <p>I built a custom dungeon generation solution from scratch. The system works by defining an initial room to start from, then moving outwards in branches. Each dungeon 'piece' has the room geometry attached, a doorway connector object for each entrance to the room, and a tag determining what class of room the piece is.</p>
+        <p>When placing a new piece, the generator picks a random available connector from the current dungeon layout, then selects a random piece from the pool that has a valid connector tag. It aligns the new piece's connector to the selected connector, then checks for collisions with existing geometry. If a collision is detected, it tries again with a different piece or connector until it finds a fit or exhausts options. Upon successfully placing a new piece, it moves forward to the new piece's doorway connector, and repeats the placing process. This process repeats, expanding the dungeon outwards until it hits a size target or it cannot place any new pieces.</p>
+
+        <h6>This is my system at work successfully generating a dungeon:</h6>
+        <img src="../../../images/Gamedev/beneathSurface/successful_generation.gif" class="img-fluid rounded" alt="Successful generation">
+
+        <h6>However, dungeons don't always generate successfully:</h6>
+        <img src="../../../images/Gamedev/beneathSurface/failure_edgecase.gif" class="img-fluid rounded" alt="Successful generation">
+        <p>In this edge case, the generator has run out of valid placements due to collisions. To handle this, the generator picks a new seed and runs the algorithm again.</p>
+
+        <h6>Problems I encountered:</h6>
+        <ul>
+          <li><strong>Dungeon piece misalignment:</strong> different clients sometimes saw different layouts → sync physics state with <code>Physics.SyncTransforms()</code> after generation.</li>
+          <li><strong>Object pickup & ownership:</strong> only host could move objects → refined authority and networked transform logic.</li>
+          <li><strong>Overlapping pieces in new projects:</strong> false collisions after updating to a new Unity version → enabled <em>Auto Sync Transforms</em>, a new feature breaking my code.</li>
+        </ul>
+
+        <h5>Custom Audio Solution</h5>
+        <p>I also designed a custom audio system for this game. One of it's main features is the dynamic audio occlusion system.</p>
+        <p>The player is contantly checking for any audio sources in their hearing range. When an audio source is found, the player sends a series of raycasts in the Audio Source's direction to check for any collision. If no collisions are detected, audio can be heard clearly and without any muffle. However, if a ray does hit an object between the player and the audio source, a slight muffle effect is applied to the audio source. This effect is magnified based on the number of rayasts that hit an object, and the player's distance from the audio source. This creates a realistic muffling effect as players move around corners and through the dungeon, enhancing immersion and tension.</p>
+        <h6>Here is the audio occlusion system in action:</h6>
+        <img src="../../../images/Gamedev/beneathSurface/audioOcclusion.gif" class="img-fluid rounded" alt="Audio occlusion">
+        <p>As the player moves behind the wall, the rays turn red as they begin to detect collisions. This causes the audio to gradually and realistically become muffled based on world geometry. When the player steps back into view of the audio source, the rays clear up again, alongside the muffle effect.</p>
+
+        <h2 id="why">Why This Game Exists</h2>
+        <p>Built to explore cooperative tension, world based storytelling, and medieval horror, while also becoming a really good IB Computer Science IA. It demonstrates networking, complex algorithms, procedural generation, physics, and asset creation.</p>
+
+        <h2 id="future">Future Development</h2>
+        <ul>
+          <li>Enemy AI and ambush behavior</li>
+          <li>Expanded loot, upgrades, and more room modules</li>
+          <li>Traps, secrets, kingdom contracts</li>
+          <li>Proximity based voice chat systems</li>
+          <li>A refined progression loop based on risk and depth</li>
+        </ul>
+        
+        <p class="small text-muted mt-2">This game is still under development. All images, descriptions, and assets are subject to change.</p>
         <a class="btn btn-outline-secondary" href="../../../index.html#projects">Back to Projects</a>
       </div>
     </main>
