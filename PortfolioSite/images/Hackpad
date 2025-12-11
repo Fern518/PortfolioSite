@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackpad Project</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="mt-5">
+            <h1 class="display-4">Custom Macropad</h1>
+            <p class="lead">A custom PCB-based macropad built for the Hack Club Blueprint program.</p>
+        </header>
+
+        <section>
+            <h2>Project Description</h2>
+            <p>This project involved designing and building a custom macropad that allows users to program specific keys for various functions. It was created as part of the Hack Club Blueprint program, which encourages students to engage in hands-on electronics projects.</p>
+        </section>
+
+        <section>
+            <h2>Technologies Used</h2>
+            <ul>
+                <li>PCB Design Software (e.g., KiCad)</li>
+                <li>Microcontroller (e.g., ATmega32U4)</li>
+                <li>3D Printing for the case</li>
+                <li>Programming in C/C++ for firmware</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Project Highlights</h2>
+            <p>The macropad features customizable RGB lighting, programmable keys, and a compact design that fits comfortably on any desk. It was a great learning experience in both hardware and software development.</p>
+        </section>
+
+        <section>
+            <h2>Images</h2>
+            <img src="../../../images/Hackpad/pad_main.png" alt="Custom Macropad" class="img-fluid">
+        </section>
+
+        <footer class="mt-5">
+            <a href="../../index.html" class="btn btn-secondary">Back to Portfolio</a>
+        </footer>
+    </div>
+</body>
+</html>

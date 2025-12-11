@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beneath the Surface - Project Write-Up</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="mt-5">
+            <h1>Beneath the Surface</h1>
+            <p>A multiplayer dungeon-crawler horror game.</p>
+        </header>
+        
+        <section class="project-details mt-4">
+            <h2>Project Overview</h2>
+            <p>Beneath the Surface is a thrilling multiplayer dungeon-crawler horror game that immerses players in a dark and eerie environment. Players must work together to navigate through treacherous dungeons filled with terrifying creatures and challenging puzzles.</p>
+            
+            <h2>Features</h2>
+            <ul>
+                <li>Cooperative gameplay for up to four players.</li>
+                <li>Dynamic environments that change with each playthrough.</li>
+                <li>Variety of character classes, each with unique abilities.</li>
+                <li>Engaging storyline with multiple endings based on player choices.</li>
+            </ul>
+
+            <h2>Technologies Used</h2>
+            <p>The game was developed using Unity, C#, and various asset packs to enhance the visual and auditory experience.</p>
+
+            <h2>Development Process</h2>
+            <p>The development of Beneath the Surface began with brainstorming sessions to outline the core gameplay mechanics and narrative. Prototyping was done in Unity, focusing on player interactions and environmental design. Feedback from playtesting sessions was crucial in refining the gameplay experience.</p>
+
+            <h2>Conclusion</h2>
+            <p>Beneath the Surface aims to provide players with a unique horror experience that emphasizes teamwork and strategy. The combination of atmospheric design and engaging gameplay makes it a standout title in the dungeon-crawler genre.</p>
+        </section>
+        
+        <footer class="mt-5">
+            <a href="../../index.html" class="btn btn-secondary">Back to Portfolio</a>
+        </footer>
+    </div>
+</body>
+</html>

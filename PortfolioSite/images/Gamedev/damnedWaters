@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Damned Waters - Project Write-Up</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="mt-5">
+            <h1>Damned Waters</h1>
+            <p>A short narrative-based horror game set at an abandoned hydroelectric dam.</p>
+        </header>
+
+        <section class="mt-4">
+            <h2>Project Overview</h2>
+            <p>Damned Waters is a unique horror experience that immerses players in a chilling narrative. Set in an abandoned hydroelectric dam, players must navigate through eerie environments while uncovering the dark history of the location.</p>
+        </section>
+
+        <section class="mt-4">
+            <h2>Gameplay Mechanics</h2>
+            <p>The game features a blend of exploration and puzzle-solving, where players must interact with the environment to progress. The atmosphere is enhanced by sound design and visual storytelling, creating a truly immersive experience.</p>
+        </section>
+
+        <section class="mt-4">
+            <h2>Technologies Used</h2>
+            <ul>
+                <li>Unity Engine</li>
+                <li>C# for scripting</li>
+                <li>Blender for 3D modeling</li>
+                <li>Adobe Audition for sound design</li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h2>Challenges Faced</h2>
+            <p>One of the main challenges was creating a believable atmosphere that conveyed horror without relying on jump scares. This required careful attention to sound design and environmental storytelling.</p>
+        </section>
+
+        <section class="mt-4">
+            <h2>Conclusion</h2>
+            <p>Damned Waters aims to provide players with a memorable horror experience that lingers long after the game is over. The combination of narrative depth and engaging gameplay mechanics sets it apart in the indie game scene.</p>
+        </section>
+
+        <footer class="mt-5">
+            <p>&copy; 2023 YourName. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

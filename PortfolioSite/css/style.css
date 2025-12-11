@@ -1,0 +1,54 @@
+/* CSS styles for the Portfolio Site */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+.projects-section {
+    margin-bottom: 40px;
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.pc-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.pc-btn:disabled {
+    background-color: #ccc;
+}
+
+.project-image {
+    background-size: cover;
+    background-position: center;
+    height: 200px; /* Adjust height as needed */
+}
+
+#contact {
+    margin-top: 40px;
+}
+
+h2 {
+    margin-top: 20px;
+}
