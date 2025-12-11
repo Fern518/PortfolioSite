@@ -133,6 +133,7 @@
 			var viewport = carousel.querySelector('.pc-viewport');
 			var prev = carousel.querySelector('.pc-prev');
 			var next = carousel.querySelector('.pc-next');
+			var projectLinks = carousel.querySelectorAll('.card a.btn');
 
 			function updateDisabled(){
 				var maxScroll = viewport.scrollWidth - viewport.clientWidth;
@@ -152,7 +153,36 @@
 			next.addEventListener('click', function(){ scrollByPage(1); });
 			viewport.addEventListener('scroll', function(){ window.requestAnimationFrame(updateDisabled); });
 			window.addEventListener('resize', updateDisabled);
-			updateDisabled();
+
+			// Persist current page when navigating to a project
+			projectLinks.forEach(function(link){
+				link.addEventListener('click', function(){
+					var pageIndex = Math.round(viewport.scrollLeft / Math.max(1, viewport.clientWidth));
+					sessionStorage.setItem('projectsPageIndex', String(pageIndex));
+					sessionStorage.setItem('projectsScrollLeft', String(viewport.scrollLeft));
+				});
+			});
+
+			// Restore page after returning from a project article
+			(function restorePosition(){
+				var idx = parseInt(sessionStorage.getItem('projectsPageIndex') || '');
+				var sl = parseInt(sessionStorage.getItem('projectsScrollLeft') || '');
+				if(!isNaN(idx) && idx > 0){
+					requestAnimationFrame(function(){
+						viewport.scrollLeft = idx * viewport.clientWidth;
+						updateDisabled();
+					});
+					sessionStorage.removeItem('projectsPageIndex');
+				}else if(!isNaN(sl) && sl > 0){
+					requestAnimationFrame(function(){
+						viewport.scrollLeft = sl;
+						updateDisabled();
+					});
+					sessionStorage.removeItem('projectsScrollLeft');
+				}else{
+					updateDisabled();
+				}
+			})();
 		})();
 		</script>
 	</body>
