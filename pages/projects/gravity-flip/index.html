@@ -10,7 +10,7 @@
   <body>
     <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
       <div class="container">
-        <a class="navbar-brand" href="../../../index.html">YourName</a>
+        <a class="navbar-brand" href="../../../index.html">Chester</a>
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a class="nav-link" href="../../../index.html#projects">Projects</a></li>
@@ -26,14 +26,46 @@
           <h1 class="display-5">Gravity Flip</h1>
           <p class="text-muted">2D puzzle-platformer built in Unity</p>
         </header>
-        <img src="../../../images/Gamedev/GravityFlip.png" class="img-fluid rounded mb-4" alt="Gravity Flip">
-        <h2>Overview</h2>
-        <p>Core mechanic centers on flipping gravity to navigate levels. Built systems for movement, hazards, and level design.</p>
-        <h2>Tech</h2>
+        <div class="mb-4 text-center">
+          <a class="btn btn-primary" href="https://fern518.itch.io/gravityflip" target="_blank" rel="noopener">Play Demo</a>
+        </div>
+        <figure class="mb-4 text-center">
+          <img src="../../../images/Gamedev/gravityFlip/logo.png" class="img-fluid rounded" alt="Gravity Flip logo">
+        </figure>
+
+        <h2 id="overview">Overview</h2>
+        <p>Gravity Flip is a short 2D puzzle-platformer built in Unity where you invert gravity to solve puzzles. Every room is designed around the tension of vertical traversal: hazards become tools when the world turns upside-down, and timing matters as you flip between floor and ceiling.</p>
+
+        <h2 id="mechanics">Core Mechanics</h2>
         <ul>
-          <li>Unity, C# scripting</li>
-          <li>Tilemaps and level triggers</li>
-          <li>Post-processing and UI</li>
+          <li><strong>Gravity Inversion:</strong> Flip between up and down on demand with cooldown-based timing.</li>
+          <li><strong>Momentum Retention:</strong> Preserve horizontal speed through flips for long aerial paths.</li>
+          <li><strong>Interactables:</strong> Buttons, doors, and moving platforms create layered puzzle states.</li>
+          <li><strong>Combat:</strong> Find challenging enemies scattered across levels to fight hand to hand.</li>
+        </ul>
+
+        <h2 id="levels">Levels and Puzzles</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <figure class="mb-4"><img src="../../../images/Gamedev/gravityFlip/buttonPuzzle.gif" class="img-fluid rounded" alt="Button puzzle"><figcaption class="small text-muted mt-2">Flipping gravity to solve button puzzle.</figcaption></figure>
+          </div>
+          <div class="col-md-6">
+            <figure class="mb-4"><img src="../../../images/Gamedev/gravityFlip/parcore.gif" class="img-fluid rounded" alt="Parkour section"><figcaption class="small text-muted mt-2">Precision platforming with mid-air gravity swaps.</figcaption></figure>
+          </div>
+          <div class="col-md-6">
+            <figure class="mb-4"><img src="../../../images/Gamedev/gravityFlip/skyParcore.gif" class="img-fluid rounded" alt="Sky parkour"><figcaption class="small text-muted mt-2">Open layouts emphasize momentum and timing.</figcaption></figure>
+          </div>
+          <div class="col-md-6">
+            <figure class="mb-4"><img src="../../../images/Gamedev/gravityFlip/3dLevel.gif" class="img-fluid rounded" alt="3D themed level"><figcaption class="small text-muted mt-2">3D-style level for visual variety.</figcaption></figure>
+          </div>
+        </div>
+
+        <h2 id="tech">Tech</h2>
+        <ul>
+          <li>Unity + C# character controller with custom gravity vectors</li>
+          <li>Tilemap-based levels, triggers, and simple state machine for doors</li>
+          <li>Custom camera controller, post-processing, and lightweight UI</li>
+          <li>Advanced AI locomotion on a 2 dimensional plane</li>
         </ul>
         <a class="btn btn-outline-secondary" href="../../../index.html#projects">Back to Projects</a>
       </div>
