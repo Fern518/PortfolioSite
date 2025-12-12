@@ -1,6 +1,9 @@
-(function(){
+(
+  function()
+  {
   function ready(fn){ if(document.readyState!=='loading'){ fn(); } else { document.addEventListener('DOMContentLoaded', fn); } }
-  ready(function(){
+  ready(function()
+  {
     var overlay = document.createElement('div');
     overlay.id = 'lightbox-overlay';
     overlay.setAttribute('role','dialog');
