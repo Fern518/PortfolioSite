@@ -35,7 +35,7 @@
     // Delegate clicks on any image element on the page
     document.body.addEventListener('click', function(e){
       var t = e.target;
-      if(t && t.tagName === 'IMG'){
+      if(t && t.tagName === 'IMG' && t.classList.contains('lightbox')) {
         // Ignore tiny UI images like arrows used as backgrounds
         var rect = t.getBoundingClientRect();
         if(rect.width < 40 && rect.height < 40){ return; }

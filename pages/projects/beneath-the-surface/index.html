@@ -28,7 +28,7 @@
           <p class="text-muted">Multiplayer dungeon-crawler horror prototype</p>
         </header>
         <figure class="mb-4 text-center">
-          <img src="../../../images/Gamedev/beneathSurface/gameplayShowcase.gif" class="img-fluid rounded" alt="Beneath the Surface gameplay">
+          <img src="../../../images/Gamedev/beneathSurface/gameplayShowcase.gif" class="img-fluid rounded lightbox" alt="Beneath the Surface gameplay">
           <figcaption class="small text-muted mt-2">Four-player co-op descent into procedural medieval dungeons.</figcaption>
         </figure>
 
@@ -74,10 +74,10 @@
         <p>When placing a new piece, the generator picks a random available connector from the current dungeon layout, then selects a random piece from the pool that has a valid connector tag. It aligns the new piece's connector to the selected connector, then checks for collisions with existing geometry. If a collision is detected, it tries again with a different piece or connector until it finds a fit or exhausts options. Upon successfully placing a new piece, it moves forward to the new piece's doorway connector, and repeats the placing process. This process repeats, expanding the dungeon outwards until it hits a size target or it cannot place any new pieces.</p>
 
         <h6>This is my system at work successfully generating a dungeon:</h6>
-        <img src="../../../images/Gamedev/beneathSurface/successful_generation.gif" class="img-fluid rounded" alt="Successful generation">
+        <img src="../../../images/Gamedev/beneathSurface/successful_generation.gif" class="img-fluid rounded lightbox" alt="Successful generation">
 
         <h6>However, dungeons don't always generate successfully:</h6>
-        <img src="../../../images/Gamedev/beneathSurface/failure_edgecase.gif" class="img-fluid rounded" alt="Failure edge case">
+        <img src="../../../images/Gamedev/beneathSurface/failure_edgecase.gif" class="img-fluid rounded lightbox" alt="Failure edge case">
         <p>In this edge case, the generator has run out of valid placements due to collisions. To handle this, the generator picks a new seed and runs the algorithm again.</p>
 
         <h6>Problems I encountered:</h6>
@@ -91,7 +91,7 @@
         <p>I also designed a custom audio system for this game. One of it's main features is the dynamic audio occlusion system.</p>
         <p>The player is contantly checking for any audio sources in their hearing range. When an audio source is found, the player sends a series of raycasts in the Audio Source's direction to check for any collision. If no collisions are detected, audio can be heard clearly and without any muffle. However, if a ray does hit an object between the player and the audio source, a slight muffle effect is applied to the audio source. This effect is magnified based on the number of rayasts that hit an object, and the player's distance from the audio source. This creates a realistic muffling effect as players move around corners and through the dungeon, enhancing immersion and tension.</p>
         <h6>Here is the audio occlusion system in action:</h6>
-        <img src="../../../images/Gamedev/beneathSurface/audioOcclusion.gif" class="img-fluid rounded" alt="Audio occlusion">
+        <img src="../../../images/Gamedev/beneathSurface/audioOcclusion.gif" class="img-fluid rounded lightbox" alt="Audio occlusion">
         <p>As the player moves behind the wall, the rays turn red as they begin to detect collisions. This causes the audio to gradually and realistically become muffled based on world geometry. When the player steps back into view of the audio source, the rays clear up again, alongside the muffle effect.</p>
 
         <h2 id="why">Why This Game Exists</h2>
